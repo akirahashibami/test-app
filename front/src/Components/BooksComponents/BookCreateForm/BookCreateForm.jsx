@@ -70,6 +70,9 @@ class BookCreateForm extends React.Component {
     return (
       <div className="BookCreateContainer">
         <h3>New Book</h3>
+        {this.props.successCreate && (
+          <p style={{color: '#16de69', fontSize: 6}}>Book was successfully created.</p>
+        )}
         <FormGroup>
           <Grid item xs={6}>
             <TextField

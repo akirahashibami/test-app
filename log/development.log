@@ -3560,3 +3560,415 @@ Processing by BooksController#destroy as HTML
 Completed 204 No Content in 2ms (ActiveRecord: 1.2ms)
 
 
+Started GET "/books" for ::1 at 2020-12-11 23:57:06 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/books" for ::1 at 2020-12-11 23:57:12 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"title"=>"hoge", "body"=>"hoge", "book"=>{"title"=>"hoge", "body"=>"hoge"}}
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `ook_params' for #<BooksController:0x00007f8edfbb6c30>
+Did you mean?  book_params
+               to_param):
+  
+app/controllers/books_controller.rb:9:in `create'
+Started GET "/books" for ::1 at 2020-12-11 23:57:27 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/books" for ::1 at 2020-12-11 23:57:32 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"title"=>"hoge", "body"=>"hoge", "book"=>{"title"=>"hoge", "body"=>"hoge"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hoge"], ["body", "hoge"], ["created_at", "2020-12-11 14:57:32.784852"], ["updated_at", "2020-12-11 14:57:32.784852"]]
+  ↳ app/controllers/books_controller.rb:10
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:05:25 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:06:58 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:07:03 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:10:00 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:10:09 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:10:16 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/books/30" for ::1 at 2020-12-12 00:10:33 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:23
+  [1m[36mBook Destroy (0.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 30]]
+  ↳ app/controllers/books_controller.rb:23
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:23
+Completed 204 No Content in 7ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:14:46 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:14:47 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:14:49 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:22:00 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:22:20 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/books" for ::1 at 2020-12-12 00:27:18 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"title"=>"hoge", "body"=>"hoge", "book"=>{"title"=>"hoge", "body"=>"hoge"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hoge"], ["body", "hoge"], ["created_at", "2020-12-11 15:27:18.279222"], ["updated_at", "2020-12-11 15:27:18.279222"]]
+  ↳ app/controllers/books_controller.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:27:30 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/books" for ::1 at 2020-12-12 00:27:39 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"title"=>"hoge", "body"=>"hoge1", "book"=>{"title"=>"hoge", "body"=>"hoge1"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hoge"], ["body", "hoge1"], ["created_at", "2020-12-11 15:27:39.699250"], ["updated_at", "2020-12-11 15:27:39.699250"]]
+  ↳ app/controllers/books_controller.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:32:41 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:32:47 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:32:48 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/books" for ::1 at 2020-12-12 00:32:52 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"title"=>"hoge", "body"=>"hoge2", "book"=>{"title"=>"hoge", "body"=>"hoge2"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hoge"], ["body", "hoge2"], ["created_at", "2020-12-11 15:32:52.137372"], ["updated_at", "2020-12-11 15:32:52.137372"]]
+  ↳ app/controllers/books_controller.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/books/31" for ::1 at 2020-12-12 00:32:56 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:23
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 31]]
+  ↳ app/controllers/books_controller.rb:23
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:23
+Completed 204 No Content in 2ms (ActiveRecord: 1.2ms)
+
+
+Started DELETE "/books/32" for ::1 at 2020-12-12 00:32:57 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:23
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 32]]
+  ↳ app/controllers/books_controller.rb:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:23
+Completed 204 No Content in 2ms (ActiveRecord: 1.1ms)
+
+
+Started DELETE "/books/33" for ::1 at 2020-12-12 00:32:57 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:23
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 33]]
+  ↳ app/controllers/books_controller.rb:23
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:23
+Completed 204 No Content in 2ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:33:02 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/books" for ::1 at 2020-12-12 00:42:47 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"title"=>"PHP", "body"=>"中級者向け", "book"=>{"title"=>"PHP", "body"=>"中級者向け"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "PHP"], ["body", "中級者向け"], ["created_at", "2020-12-11 15:42:47.464019"], ["updated_at", "2020-12-11 15:42:47.464019"]]
+  ↳ app/controllers/books_controller.rb:10
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:56:30 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 00:56:32 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/books" for ::1 at 2020-12-12 00:56:35 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"title"=>"hoge", "body"=>"hoge", "book"=>{"title"=>"hoge", "body"=>"hoge"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hoge"], ["body", "hoge"], ["created_at", "2020-12-11 15:56:35.429893"], ["updated_at", "2020-12-11 15:56:35.429893"]]
+  ↳ app/controllers/books_controller.rb:10
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 01:24:42 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/books" for ::1 at 2020-12-12 01:24:47 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"title"=>"hoge", "body"=>"hoge", "book"=>{"title"=>"hoge", "body"=>"hoge"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hoge"], ["body", "hoge"], ["created_at", "2020-12-11 16:24:47.003050"], ["updated_at", "2020-12-11 16:24:47.003050"]]
+  ↳ app/controllers/books_controller.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 01:25:03 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/books/36" for ::1 at 2020-12-12 01:25:11 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:23
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 36]]
+  ↳ app/controllers/books_controller.rb:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:23
+Completed 204 No Content in 2ms (ActiveRecord: 1.1ms)
+
+
+Started DELETE "/books/35" for ::1 at 2020-12-12 01:25:12 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"35"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:23
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 35]]
+  ↳ app/controllers/books_controller.rb:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:23
+Completed 204 No Content in 2ms (ActiveRecord: 1.1ms)
+
+
+Started POST "/books" for ::1 at 2020-12-12 01:25:16 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"title"=>"hoge", "body"=>"hoge", "book"=>{"title"=>"hoge", "body"=>"hoge"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hoge"], ["body", "hoge"], ["created_at", "2020-12-11 16:25:16.617960"], ["updated_at", "2020-12-11 16:25:16.617960"]]
+  ↳ app/controllers/books_controller.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 01:25:27 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 01:25:33 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 01:25:37 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/books" for ::1 at 2020-12-12 01:25:44 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"title"=>"hoge", "body"=>"hoge", "book"=>{"title"=>"hoge", "body"=>"hoge"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hoge"], ["body", "hoge"], ["created_at", "2020-12-11 16:25:44.689452"], ["updated_at", "2020-12-11 16:25:44.689452"]]
+  ↳ app/controllers/books_controller.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books" for ::1 at 2020-12-12 01:25:53 +0900
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:5
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/books" for ::1 at 2020-12-12 01:25:57 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"title"=>"hoge", "body"=>"hoge", "book"=>{"title"=>"hoge", "body"=>"hoge"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hoge"], ["body", "hoge"], ["created_at", "2020-12-11 16:25:57.490570"], ["updated_at", "2020-12-11 16:25:57.490570"]]
+  ↳ app/controllers/books_controller.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/books" for ::1 at 2020-12-12 01:27:44 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"title"=>"hoge", "body"=>"hoge", "book"=>{"title"=>"hoge", "body"=>"hoge"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hoge"], ["body", "hoge"], ["created_at", "2020-12-11 16:27:44.111357"], ["updated_at", "2020-12-11 16:27:44.111357"]]
+  ↳ app/controllers/books_controller.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:10
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+

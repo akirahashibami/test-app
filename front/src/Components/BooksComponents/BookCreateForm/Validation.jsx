@@ -1,12 +1,10 @@
 const titleValidation = (formTitle: string): string => {
   if (!formTitle) return 'タイトルを入力してください'
-
   return ''
 }
 
 const bodyValidation = (formBody: string): string => {
   if (!formBody) return '本文を入力してください'
-
   return ''
 }
 

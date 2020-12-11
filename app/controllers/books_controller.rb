@@ -6,8 +6,10 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.create(title: params[:title], body: params[:body])
-    render json: @book
+    @book = Book.new(book_params)
+    if @book.save
+      render json: @book
+    end
   end
 
   def update
@@ -23,5 +25,11 @@ class BooksController < ApplicationController
     else
       render json: @book.errors, status: :unprocessable_entity
     end
+  end
+
+  private
+
+  def book_params
+    params.require(:book).permit(:title, :body)
   end
 end
