@@ -48,6 +48,7 @@ class BookContainer extends React.Component {
           <BookShow
             handleOpenShow={this.handleOpenShow}
             handleCloseShow={this.handleCloseShow}
+            handleOpenEdit={this.handleOpenEdit}
             dialogOpen={this.state.openShow}
             bookData={this.props.data}
           />
@@ -58,6 +59,7 @@ class BookContainer extends React.Component {
             handleCloseEdit={this.handleCloseEdit}
             dialogOpen={this.state.openEdit}
             bookData={this.props.data}
+            updateBook={this.props.updateBook}
           />
         </TableCell>
         <TableCell onClick={this.handleDelete}>

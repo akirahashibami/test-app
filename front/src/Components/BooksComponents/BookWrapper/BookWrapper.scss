@@ -6,3 +6,17 @@
     display: block;
   }
 }
+
+.editDialog{
+  min-width: 500px;
+  padding: 10px;
+
+  &__close{
+    float: right;
+    padding: 10px;
+  }
+
+  .MuiButtonBase-root{
+    margin: 30px 0 10px 0;
+  }
+}

@@ -6,7 +6,9 @@ import update from 'react-addons-update';
 import BooksIndex from './BookWrapper/BooksIndex';
 import BookCreateForm from './BookCreateForm/BookCreateForm';
 
-class BooksMainContaier extends React.Component {
+import './BooksMainContainer.min.css';
+
+class BooksMainContainer extends React.Component {
 
   state = {
     books: []
@@ -41,7 +43,7 @@ class BooksMainContaier extends React.Component {
       })
   }
 
-  updateBook = (id) => {
+  updateBook = (id, title, body) => {
     axios
       .patch(`http://localhost:3001/books/${id}`,{title: title, body: body})
       .then((response) => {
@@ -53,7 +55,7 @@ class BooksMainContaier extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="MainContainer">
         <BooksIndex
           bookData={this.state.books}
           deleteBook={this.deleteBook}
@@ -65,4 +67,4 @@ class BooksMainContaier extends React.Component {
   }
 }
 
-export default BooksMainContaier;
+export default BooksMainContainer;

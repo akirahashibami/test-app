@@ -11,6 +11,8 @@ import {
   Paper
 } from '@material-ui/core';
 
+import { Link } from 'react-router-dom';
+
 import BookContainer from './BookContainer';
 
 const useStyles = makeStyles({
@@ -25,6 +27,7 @@ const BooksIndex = props => {
 
   return(
     <div>
+      <Link to="/">topへ戻る</Link>
       <h3>Books</h3>
       <TableContainer component={Paper} style={{boxShadow: "none"}}>
         <Table className={classes.table} >
@@ -45,6 +48,7 @@ const BooksIndex = props => {
                   key={ data.id }
                   deleteBook={props.deleteBook}
                   createBook={props.createBook}
+                  updateBook={props.updateBook}
                 />
               )
             })}

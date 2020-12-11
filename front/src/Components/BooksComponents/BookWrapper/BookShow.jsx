@@ -18,7 +18,10 @@ const BookShow = props => {
         <div className="bookDialog">
           <p><strong>Title: </strong>{props.bookData.title}</p>
           <p><strong>Body: </strong>{props.bookData.body}</p>
-          <Button className="editButton">Edit</Button>
+          <Button
+            className="editButton"
+            onClick={props.handleOpenEdit}
+          >Edit</Button>
         </div>
       </Dialog>
       <Button onClick={props.handleOpenShow}>
